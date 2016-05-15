@@ -34,13 +34,13 @@ The "configuration option" field, means that the config file will have
 something like this:
 
 ```yaml
-keys:
-  - 'q': quit
-  - 'u': parent
-  - '^': parent
-  - 'd': doc
-  - 'Esc': menu
-  - 'h': left
+'keys': { 'q': 'quit'
+        , 'u': 'parent'
+        , '^': 'parent'
+        , 'd': 'doc'
+        , 'Esc': 'menu'
+        , 'h': 'left'
+        }
   ...
 ```
 
