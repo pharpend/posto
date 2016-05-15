@@ -25,10 +25,8 @@ main =
   where myInfo = fpDesc "Console-based-mail client"
         myParser = altconcat [ versionCmd
                              , licenseCmd
-                             , myParser'
+                             , pure Run
                              ]
-        myParser' = subconcat [
-                              ]
 
 -- |The @posto --version@ command.
 versionCmd :: Parser Command
