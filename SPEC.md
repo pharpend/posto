@@ -43,10 +43,10 @@ Sort of like `vi` crossed with `dired` keybindings
 
 | Action | Keys |
 | --- | --- |
-| Column Left | `h`, `LeftArrow` |
-| Row Up | `j`, `UpArrow` |
-| Row Down | `k`, `DownArrow` |
-| Column Right | `i`, `RightArrow` |
+| Column Left | `h`, `←` |
+| Row Down | `j`, `↓` |
+| Row Up | `k`, `↑`|
+| Column Right | `i`, `→` |
 
 #### Reading and responding
 
