@@ -30,37 +30,51 @@ Rough, informal specification for posto.
 
 Sort of like `vi` crossed with `dired` keybindings
 
+The "configuration option" field, means that the config file will have
+something like this:
+
+```yaml
+keys:
+  - 'q': quit
+  - 'u': parent
+  - '^': parent
+  - 'd': doc
+  - 'Esc': menu
+  - 'h': left
+  ...
+```
+
 #### Basics
 
-| Action | Keys |
-| --- | --- |
-| Quit | `q` |
-| Parent | `u`, `^` |
-| Documentation | `d`, `?` |
-| Menu | `Esc` |
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| Quit | `q` | `quit` |
+| Parent | `u`, `^` | `parent` |
+| Documentation | `d`, `?` | `doc`, `documentation` |
+| Menu | `Esc` | `menu` |
 
 #### Movement
 
-| Action | Keys |
-| --- | --- |
-| Column Left | `h`, `←` |
-| Row Down | `j`, `↓` |
-| Row Up | `k`, `↑`|
-| Column Right | `i`, `→` |
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| Column Left | `h`, `←` | `left` |
+| Row Down | `j`, `↓` | `up` |
+| Row Up | `k`, `↑`| `down` |
+| Column Right | `i`, `→` | `right` |
 
 #### Reading and responding
 
-| Action | Keys |
-| --- | --- |
-| New | `n` |
-| Reply | `r` |
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| New | `n` | `new` |
+| Reply | `r` | `reply` |
 
 #### Sorting mail
 
-| Action | Keys |
-| --- | --- |
-| Copy | `C` |
-| Synchronize/update | `g` |
-| Sort by current column | `s` |
-| Move (rename) | `R` |
-| Mark | `m` |
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| Copy | `C` | `copy`, `cp` |
+| Synchronize/update | `g` | `sync`, `update` |
+| Sort by current column | `s` | `sort` |
+| Move (rename) | `R` | `mv`, `move`, `rename` |
+| Mark | `m` | `mark` |
