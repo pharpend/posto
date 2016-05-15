@@ -1,8 +1,9 @@
 module Main where
 
+import Posto
+
 import qualified Data.ByteString as B
 import           Data.FileEmbed
-import qualified Data.Text.IO as T
 import           Options.Applicative
 import           Options.Applicative.Helper
 import           Options.Applicative.Simple
@@ -21,7 +22,7 @@ main =
      case result of
        Version -> putStrLn $(simpleVersion P.version)
        License -> B.hPut stdout $(embedFile "LICENSE")
-       Run -> T.putStrLn "run"
+       Run -> run
   where myInfo = fpDesc "Console-based-mail client"
         myParser = altconcat [ versionCmd
                              , licenseCmd
