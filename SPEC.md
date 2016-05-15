@@ -22,7 +22,8 @@ Rough, informal specification for posto.
 * `--help` prints the version
 * `--version` prints the version
 * `license` prints the version
-* `config` will print keybindings and current full configuration
+* `config` will print keybindings and current full configuration, in
+  YAML form. This allows easy `grep`ing.
 
 ## Configurable keybindings
 
