@@ -28,12 +28,19 @@ library
   default-language: Haskell2010
   ghc-options:      -Wall
   default-extensions:
+    DeriveGeneric
     OverloadedStrings
   build-depends:
       base ==4.8.*
-    , vty
+    , aeson
+    , bytestring
+    , text
+    , unordered-containers
+    , vector
+    , yaml
   exposed-modules:
     Posto
+    Posto.Config
 
 executable posto
   main-is:          Main.hs
