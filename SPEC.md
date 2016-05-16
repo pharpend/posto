@@ -12,6 +12,7 @@ Rough, informal specification for posto.
 * TLS support
 * PGP support
 * GMail support
+* Some HTML mail support, maybe through piping to elinks or something.
 
 # User interface
 
