@@ -28,6 +28,7 @@ main =
                              , licenseCmd
                              , pure Run
                              ]
+        run = putStrLn "Run"
 
 -- |The @posto --version@ command.
 versionCmd :: Parser Command
