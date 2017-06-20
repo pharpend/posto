@@ -1,39 +1,105 @@
 # posto
 
-Console-based email client. I wrote it because
-[alpine](https://www.washington.edu/alpine/)'s encryption support is
-terrible, and [mutt](http://www.mutt.org/) is too complicated. posto is
-just the right amount of complicated.
-
-Posto is licensed under the permissive ISC license. There is a copy
-included in the [LICENSE](LICENSE) file.
-
-Bugs, questions, comments, and complaints should be directed to the
-[GitHub bug tracker](https://github.com/pharpend/posto/issues). If you
-don't have a GitHub account, or don't want to make one, you can of
-course email me with your bug. (See contact info at the end of this
-file).
+Mail client in-the-works. Designed to have simple usage, and easily support
+common usage cases.
 
 ## Installation
 
-Right now, there's no binary distribution. I'll work on that at some
-point. Therefore, you need to compile posto from source.
-
-To do so, first install
-[stack](http://docs.haskellstack.org/en/stable/README/) and
-[git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Then,
-run these commands in a terminal
-
-    $ git clone https://github.com/pharpend/posto.git
+    $ git clone git://github.com/pharpend/posto.git
     $ cd posto
     $ stack setup
     $ stack install
-    
-Boom! You're done. Run `posto --help` to see the available options.
 
-## Contact and what not
 
-The author of this is Peter Harpending.
+# Goals/specification
 
-* Email: `peter@harpending.org`
-* IRC: `pharpend` on FreeNode.net
+## Version 0.1
+
+YAML configuration, can pull messages from gmail and respond to them.
+
+YAML configuration options:
+
+1. username
+2. passfile
+
+## Eventually
+
+#### Features
+
+* Configurable keybindings
+* YAML configuration file
+* Extensive built-in documentation
+* Multiple mailboxes
+* POP, IMAP, and SMTP support
+* TLS support
+* PGP support
+* GMail support
+* Some HTML mail support, maybe through piping to elinks or something.
+
+### User interface
+
+#### Command line options
+
+`optparse-applicative` and friends will do much of the work for us.
+
+* `--help` prints the version
+* `--version` prints the version
+* `license` prints the version
+* `config` will print keybindings and current full configuration, in
+  YAML form. This allows easy `grep`ing.
+
+## Configurable keybindings
+
+### Default keybindings
+
+Sort of like `vi` crossed with `dired` keybindings
+
+The "configuration option" field, means that the config file will have
+something like this:
+
+```yaml
+keys:
+  q: quit
+  u: parent
+  '^': parent
+  d: doc
+  Esc: menu
+  h: left
+  ...
+```
+
+#### Basics
+
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| Quit | `q` | `quit` |
+| Parent | `u`, `^` | `parent` |
+| Documentation | `d`, `?` | `doc`, `documentation` |
+| Menu | `Esc` | `menu` |
+
+#### Movement
+
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| Column Left | `h`, `←` | `left` |
+| Row Down | `j`, `↓` | `up` |
+| Row Up | `k`, `↑`| `down` |
+| Column Right | `i`, `→` | `right` |
+
+#### Reading and responding
+
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| New | `n` | `new` |
+| Reply | `r` | `reply` |
+
+#### Sorting mail
+
+| Action | Keys | Configuration option |
+| --- | --- | --- |
+| Copy | `C` | `copy`, `cp` |
+| Synchronize/update | `g` | `sync`, `update` |
+| Sort by current column | `s` | `sort` |
+| Move (rename) | `R` | `mv`, `move`, `rename` |
+| Mark | `m` | `mark` |
+
